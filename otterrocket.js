@@ -1,6 +1,56 @@
 
+
+let _a=false
+if(_a==false){
+  setInterval(function(){
+    if(document.querySelector('.post-submit-success').style.display!='none' && _a !=true){
+      ga('send', 'event', 'c', 'a', window.location.pathname );
+      _a = true
+}},100)}
+
+
+
+
+
+
+function parse_URL(url) {
+        var a = document.createElement("a");
+        a.href = url;
+        return {
+          source: url,
+          protocol: a.protocol.replace(":", ""),
+          host: a.hostname,
+          port: a.port,
+          query: a.search,
+          params: (function() {
+            var ret = {},
+              seg = a.search.replace(/^\?/, "").split("&"),
+              len = seg.length,
+              i = 0,
+              s;
+            for (; i < len; i++) {
+              if (!seg[i]) {
+                continue;
+              }
+              s = seg[i].split("=");
+              ret[s[0]] = s[1];
+            }
+            return ret;
+          })(),
+          file: (a.pathname.match(/\/([^\/?#]+)$/i) || [, ""])[1],
+          hash: a.hash.replace("#", ""),
+          path: a.pathname.replace(/^([^\/])/, "/$1"),
+          relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ""])[1],
+          segments: a.pathname.replace(/^\//, "").split("/")
+        };
+}
+
 setTimeout(function(){
-     
+    (function() {
+        if(document.querySelector('wysiwyg-content')!=false){
+          document.querySelector('test').style.display='block';
+        }
+      })();
 }, 100);
 
 
@@ -18,7 +68,7 @@ L: contact
 
 window.onload = function() {
 
-  };
+};
 
 
 
@@ -92,3 +142,8 @@ Click the Top left nav menu
 
 
   
+
+
+//  % between a / b 
+a= 7900 ;b= 7600 ;c=a-b;d=a+b;e=(c/(d/2))*100;
+console.log(e)
