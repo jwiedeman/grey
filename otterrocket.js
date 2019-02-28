@@ -67,7 +67,11 @@ L: contact
 
 
 window.onload = function() {
-
+  let __cond = false
+  if(__cond==false){
+  setInterval(function(){
+  if(document.querySelector('.wysiwyg-content')!=null && __cond !=true){ga('send', 'event', 'c', 'a', window.location.pathname);
+  __cond = true}}, 100)}
 };
 
 
