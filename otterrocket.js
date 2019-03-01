@@ -56,14 +56,18 @@ setTimeout(function(){
 
 
 
-ga('send', 'event', 'c', 'a', 'contact');
+ga('send', 'event', 'contact', 'submit', 'form');
+ga('send', 'event', 'email', 'click', 'link');
 
-
+Email click
+C: email
+A: click
+L: link
 
 Contact Form
-C: c
-A: a
-L: contact
+C: contact
+A: submit
+L: form
 
 
 window.onload = function() {
@@ -74,7 +78,8 @@ window.onload = function() {
   __cond = true}}, 100)}
 };
 
-
+// MAILTO
+jQuery("a[href^=mailto]")
 
 
   $(document).ready(function() { document.querySelectorAll("a.fp-featured").forEach(function(item){
