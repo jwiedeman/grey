@@ -6,7 +6,7 @@
 
 ## Update packages and Upgrade system
 #sudo apt-get update -y
-
+# https://serversforhackers.com/c/what-well-cover
 ## Git ##
 #echo '###Installing Git..'
 #sudo apt-get install git -y
