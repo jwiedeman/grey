@@ -24,6 +24,7 @@ sudo apt-get install git -y
 reset
 bar::status_changed 2 14
 echo "Install putty package ..."
+# putty is like Fema, its trash but ive had a use for it from time to time
 sudo apt-get install putty -y
 
 reset
@@ -57,17 +58,6 @@ reset
 bar::status_changed 8 14
 echo "Install build-essential package ..."
 sudo apt-get install build-essential
-
-reset
-bar::status_changed 9 14
-echo "Install build-essential package ..."
-sudo apt-get install build-essential
-
-reset
-bar::status_changed 10 14
-echo "Install build-essential package ..."
-sudo apt-get install build-essential
-
 
 
 reset
