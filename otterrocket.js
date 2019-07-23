@@ -13,6 +13,18 @@
 
 
 
+(function () {
+  var i = setInterval(function () {
+    try {
+      if (document.getElementById('682283319302407823-msg') != null) {
+        console.log('fired')
+        clearInterval(i)
+      }
+    } catch (error) {
+      clearInterval(i)
+    }
+  }, 100)
+})()
 
 
 
@@ -22,10 +34,7 @@
 
 
 
-
-
-
-
+jQuery(".cfx_submit:contains('See Plans')").show()
 
 
 
@@ -38,7 +47,7 @@ function parse_URL(url) {
   a.href = url;
   return {
     source: url,
-    protocol: a.protocol.relace(":", ""),
+    protocol: a.protocol.replace(":", ""),
     host: a.hostname,
     port: a.port,
     query: a.search,
