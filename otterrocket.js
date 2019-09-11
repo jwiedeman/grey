@@ -1,7 +1,48 @@
+get dob from Date
+function getAge(DOB) {
+  var today = new Date();
+  var birthDate = new Date(DOB);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age = age - 1;
+  }
+
+  return age;
+}
+
+alert(getAge("1983-08-15T20:04:17.281Z"));
+
+
+
+js preformance check 
+function functionOne (){
+  // Stuff 
+ }
+ function functionTwo (){
+  // Stuff 
+ }
+ 
+ 
+ var iterations = 1000000;
+ console.time('Function #1');
+ for(var i = 0; i < iterations; i++ ){
+     functionOne();
+ };
+ console.timeEnd('Function #1')
+ 
+ console.time('Function #2');
+ for(var i = 0; i < iterations; i++ ){
+     functionTwo();
+ };
+ console.timeEnd('Function #2')
+ 
+
+
 (function () {
   var i = setInterval(function () {
     try {
-      if (document.getElementById('682283319302407823-msg') != null) {
+      if (document.querySelector('.success-message') != null) {
         console.log('fired')
         clearInterval(i)
       }
@@ -137,6 +178,9 @@ https: //regex101.com/r/rV3oP8/1
   })
 })
 
+document.querySelector('.submit').addEventListener('click', function() {
+  // Do stuff
+}, { once: true })
 
     // MAILTO
     $('a[href^="mailto:"]') jQuery("a[href^=mailto]")
