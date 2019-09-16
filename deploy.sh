@@ -19,28 +19,28 @@ sudo apt-get update -y
 reset
 bar::status_changed 1 14
 echo "Install git package ..."
-sudo apt-get install git -y
+sudo apt-get install git 
 
 reset
 bar::status_changed 2 14
 echo "Install putty package ..."
 # putty is like Fema, its trash but ive had a use for it from time to time
-sudo apt-get install putty -y
+sudo apt-get install putty 
 
 reset
 bar::status_changed 3 14
 echo "Install filezilla package ..."
-sudo apt-get install filezilla -y
+sudo apt-get install filezilla 
 
 reset
 bar::status_changed 4 14
 echo "Install nodejs package ..."
-sudo apt-get install nodejs -y
+sudo apt-get install nodejs 
 
 reset
 bar::status_changed 5 14
 echo "Install npm package ..."
-sudo apt-get install npm -y
+sudo apt-get install npm 
 
 reset
 bar::status_changed 6 14
@@ -52,7 +52,7 @@ bar::status_changed 7 14
 echo "Install Hyper package ..."
 sudo apt-get install build-essential
 wget -O hyper.deb https://releases.hyper.is/download/AppImage
-sudo apt install ./hyper.deb -y
+sudo apt install ./hyper.deb 
 
 reset
 bar::status_changed 8 14
@@ -63,13 +63,13 @@ sudo apt-get install build-essential
 reset
 bar::status_changed 11 14
 echo "Get Google Chrome package..."
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -y
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
 
 
 reset
 bar::status_changed 12 14
 echo "Install Google Chrome..."
-sudo dpkg -i google-chrome-stable_current_amd64.deb -y
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
 
 
 reset
@@ -81,7 +81,7 @@ wget -O vscode.deb https://go.microsoft.com/fwlink/?LinkID=760868
 reset
 bar::status_changed 14 14
 echo "Install vscode..."
-sudo apt install ./vscode.deb -y
+sudo apt install ./vscode.deb 
 
 
 
