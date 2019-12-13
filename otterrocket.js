@@ -408,3 +408,122 @@ jQuery("a[href^=mailto]").on('click', function () {
 })
 
 Open acc ET is all added, GA just needs to be fixed
+
+
+
+sftp / ftp / ssl / tc:ip / DNS / DHCP 
+Disaster recovery and post exploration triage
+Recovering and reviewing logs & Compromise detection
+Wordpress hardening
+4 years of small business network administration 
+1 year Linux administration
+2 years small business Windows administration
+
+Cybrary Intro to infosec
+Cybrary IT fundamentals
+Cybrary sec+ 
+cybrary fundamentals of vulnerability management 
+
+
+
+
+
+Naw, just maybe lie about experience. Then fake it till you make it.
+Josh
+I wonder if I can spin my current role as net admin
+Bouncing Square 
+I would.
+Josh 
+so, I deal with a ton of over the web work, but from a networking perspective
+Bouncing Square 
+It’s how I took my cissp with not even a years security experience.
+Josh 
+ do you know what that would even be classified? Like, I know my protocols through most of the 7 layer
+idk if I can spin that as like wan net administration
+
+Bouncing Square 
+Well, do you know how to setup a basic router with a firewall?
+
+Josh 
+already did it with pfsense
+
+Bouncing Square 
+Do you know about security profiles for windows users?
+
+Josh 
+like the whole active directory user management stuff, yeah
+
+Bouncing Square 
+Well, when was the first time you setup a wireless router!?
+
+Josh 
+group policy side though
+fuck like 10 years ago
+
+Josh 
+ I could just spin my jobs 3+ years ago as sysadmin
+
+Bouncing Square 5:33 PM
+See, “Experience administrating small business networks for 10 years”
+
+Bouncing Square 5:34 PM
+I had a mentor when I worked at bell south that helped me.
+
+I mean I do compromised site recovery already
+
+Bouncing Square 5:36 PM
+All sorts of little things. “Disaster recovery and post exploration triage”
+Josh 5:36 PM
+like, their so so sly, their shit gets picked up by the google spider, sometimes they add files to an FTP server, but lately its a cdn link, so you have to scan all incoming scripts for their contents
+Bouncing Square 5:36 PM
+Exploitation
+Learning how to talk about what you do, in order to get past the HR filter is amazing.
+In fact, in your about me if you just put in there that you are “studying to get your cissp”
+
+Josh 5:37 PM
+I can talk the talk, but the HR filter wall is still my enemy
+
+Bouncing Square 5:37 PM
+It will get past the auto filters
+
+
+ironblood and dale also suggest saying I have a bachelors or associates from ITT tech
+cant be verified
+
+
+Josh 5:38 PM
+I mean, if they hard pressed, idk how id spin it, not having a diploma
+
+Bouncing Square 5:39 PM
+I just straight up put down the schools I have ever taken a class in, and don’t put down that I have a degree.
+Josh 5:40 PM
+so how do you do that, just like
+itt tech - bachelors in computer science
+dosnt claim you have it, or imply anything other than attendance
+
+Bouncing Square 5:41 PM
+In fact, put in there you want your OsCP or GPEN just to kill the filter.
+
+Josh 5:42 PM
+how would you phrase that, "puruing oscp cissp and gpen"?
+
+Bouncing Square 5:42 PM
+Just be like “closing my skill gap with some entry level experience in order to prove my skills and attain my OSCP”
+
+Bouncing Square 5:43 PM
+I put it in different places. Some places want you to fill out a form. Others take your resume and scan it to populate stuff.
+
+Josh 5:43 PM
+huh, so how were you underqualified for the vmware position?
+and how did you get in with that
+
+Bouncing Square 5:43 PM
+I’m not a security engineer.
+I’m a hacker.
+
+Attitude and confidence, and being able to produce.
+
+deep dive logs at work and do all sorts of shit like that to prove access, history and stuff 
+See. That’s soc work.
+That’s all it is. Recovering and reviewing logs, telling a story. Being able to detect compromise.
+Figure out how to separate them into years you worked there. Make it look like a natural progression over time.
