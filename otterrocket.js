@@ -1,6 +1,16 @@
+function contains(selector, text) {
+  var elements = document.querySelectorAll(selector);
+  return [].filter.call(elements, function(element){
+    return RegExp(text).test(element.textContent);
+  });
+}
+contains('a',/shop/i).forEach(element => element.addEventListener("click", function(){
+  ga('send', 'event', 'contact', 'submit', 'form')
+ }));
+ 
 
 
-
+ga.getAll()[0].get('name');
 
 // get dob from Date
 function getAge(DOB) {
@@ -58,7 +68,7 @@ function functionOne (){
 (function () {
   var i = setInterval(function () {
     try {
-      if (document.querySelector('.success-message') != null) {
+      if (jQuery("p:contains('Your form has been successfully submitted!')").length != 0) {
         console.log('fired')
         clearInterval(i)
       }
@@ -73,7 +83,7 @@ function functionOne (){
 (function () {
   var i = setInterval(function () {
     try {
-      if (document.getElementById('682283319302407823-msg') != null) {
+      if (document.getElementById('LabelMsg') != null) {
         console.log('fired')
         clearInterval(i)
       }
@@ -89,9 +99,6 @@ function functionOne (){
 
 
 
-
-
-jQuery(".cfx_submit:contains('See Plans')").show()
 
 
 #google-wcc-debug
@@ -186,7 +193,8 @@ setTimeout(function () {
 
 // Regex if url past ./ contains X
 https: //regex101.com/r/rV3oP8/1
-\b( ? : https ? : \/\/)?[^\/:]+\/.*?job
+\b( ? : https ? : \/\/)?[^\/:]+\/.*?return_to
+
 
     document.querySelectorAll("a.fp-featured").forEach(function (item) {
   item.addEventListener('click', function () {
@@ -201,6 +209,11 @@ document.querySelector('.submit').addEventListener('click', function() {
 // MAILTO
 $('a[href^="mailto:"]') 
 jQuery("a[href^=mailto]")
+
+email link click
+jQuery("a[href^=https://app.barn2door.com]").on('click', function () {
+  ga('send', 'event', 'contact', 'submit', 'form');
+})
 
 $(document).ready(function () {
 
@@ -268,7 +281,12 @@ element.addEventListener('click', function handler() {
 
 
 
-
+function contains(selector, text) {
+  var elements = document.querySelectorAll(selector);
+  return [].filter.call(elements, function(element){
+    return RegExp(text).test(element.textContent);
+  });
+}
 
   // Google Analytics GAQ
 var _gaq = [
@@ -288,10 +306,6 @@ var _gaq = [
 
 
 
-email link click
-jQuery("a[href^=mailto]").on('click', function () {
-  ga('send', 'event', 'contact', 'submit', 'form');
-})
 
 
 
