@@ -9,6 +9,7 @@ contains('a',/shop/i).forEach(element => element.addEventListener("click", funct
  }));
  
 
+ var numberOfLineBreaks = (enteredText.match(/\n/g)||[]).length;
 
 ga.getAll()[0].get('name');
 
@@ -323,3 +324,23 @@ Cybrary IT fundamentals
 Cybrary sec+ 
 cybrary fundamentals of vulnerability management 
 
+
+
+Array.prototype.remove = function() {
+  var what, a = arguments, L = a.length, ax;
+  while (L && this.length) {
+      what = a[--L];
+      while ((ax = this.indexOf(what)) !== -1) {
+          this.splice(ax, 1);
+      }
+  }
+  return this;
+};
+
+var ary = ['three', 'seven', 'eleven'];
+
+ary.remove('seven');
+
+/*  returned value: (Array)
+three,eleven
+*/
