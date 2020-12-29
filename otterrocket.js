@@ -432,9 +432,6 @@ three,eleven
 
 
 
-writing up emails for me
-making me work through her to work with marc / AMs on urgent tickets, or tickets that are not urgent but percieved as urgent 
-
 
 
 array filter 
