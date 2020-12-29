@@ -1,3 +1,60 @@
+MAPS HOOVER
+
+
+
+var listingArr = []
+var key = 'greenbridge' 
+var local = localStorage.getItem(key); 
+if(local==null){ //create cookie if it dosnt exist
+console.log('new storage created')
+ localStorage.setItem(key, '[]')
+ }
+ // get anything in the cookie befroe we start, and set that as our listing arr so we dont overrite it
+var setArr = JSON.parse(localStorage.getItem(key))
+setArr.forEach(function(item){
+listingArr.push(item)
+})
+// localStorage.setItem(key, true)
+function addUnique(data) {
+  var index = -1;
+  for( var i = 0; i < listingArr.length; i++) {
+    if(listingArr[i].name === data.name) {
+      index = i;
+    }
+  }
+  if(index > -1) {
+    listingArr[index] = data;
+  } else {
+    console.log('%c #:' + listingArr.length + ' Listing Added  ->'+  data.name + ' - ' + data.location + ' - ' + data.starts ,  'color: white;')
+    listingArr.push(data)
+    localStorage.setItem(key, JSON.stringify(listingArr))
+  }
+}
+setInterval(function(){
+document.querySelectorAll('.section-result-text-content').forEach(function(listing){
+var _el = {}
+listing.getElementsByClassName("section-result-title")[0].innerText!= undefined ? _el.name = listing.getElementsByClassName("section-result-title")[0].innerText : console.log('-notitle')  
+listing.getElementsByClassName('section-result-location')[0].innerText != undefined ? _el.location= listing.getElementsByClassName('section-result-location')[0].innerText : console.log('-nolocation')  
+listing.getElementsByClassName('cards-rating-score')[0].innerText != undefined ? _el.stars = listing.getElementsByClassName('cards-rating-score')[0].innerText : console.log('-nostars')   
+addUnique(_el)
+})
+}, 100);
+
+
+
+ga('gtm2.send', 'event', 'form', 'submit', window.location.pathname)
+
+
+
+
+localStorage.getItem('123')
+localStorage.setItem('123', data)
+
+
+
+
+
+
 function contains(selector, text) {
   var elements = document.querySelectorAll(selector);
   return [].filter.call(elements, function(element){
@@ -8,6 +65,26 @@ contains('a',/shop/i).forEach(element => element.addEventListener("click", funct
   ga('send', 'event', 'contact', 'submit', 'form')
  }));
  
+
+ AIzaSyDoD5WpymZckLTPRh52meutP6VVoBlXmDo
+
+
+
+// Notes
+
+The current integration is added using the default shopify integration using universal analytics. The gtag version of GA loads in universal analytics and transitioning to gtag is not required. 
+
+Let me know if you have any questions. 
+
+
+
+
+
+
+
+
+
+
 
  var numberOfLineBreaks = (enteredText.match(/\n/g)||[]).length;
 
@@ -50,7 +127,7 @@ function functionOne (){
   // Stuff 
  }
  
- var iterations = 1000000;
+ var iterations = 1;
  console.time('Function #1');
  for(var i = 0; i < iterations; i++ ){
      functionOne();
@@ -187,6 +264,14 @@ window.onload = function () {
 
 };
 
+window.onload = function () {
+jQuery("button:contains('SUBSCRIBE NOW')").one('click',function(){
+ga('send', 'event', 'newsletter', 'submit', 'form')
+})
+jQuery("button:contains('Subscribe Now')").one('click',function(){
+ga('send', 'event', 'newsletter', 'submit', 'form')
+})
+};
 
 setTimeout(function () {
 
@@ -221,11 +306,11 @@ $(document).ready(function () {
 });
 
 //outbound link hijack
-$(document).ready(function () {
-  $('[href*="housecallpro.com"]').click(function () {
+jQuery(document).ready(function () {
+  jQuery('[href*="housecallpro.com"]').click(function (event) {
     event.preventDefault();
     ga('send', 'event', 'contact', 'submit', 'form');
-    location.assign($(this)[0].href);
+    location.assign(jQuery(this)[0].href);
   });
 });
 
@@ -344,3 +429,15 @@ ary.remove('seven');
 /*  returned value: (Array)
 three,eleven
 */
+
+
+
+writing up emails for me
+making me work through her to work with marc / AMs on urgent tickets, or tickets that are not urgent but percieved as urgent 
+
+
+
+array filter 
+.filter(function(item, pos){
+  return arr.indexOf(item)== pos; 
+});
