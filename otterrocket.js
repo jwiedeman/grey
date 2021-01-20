@@ -103,7 +103,7 @@ function getAge(DOB) {
   return age;
 }
 alert(getAge("1983-08-15T20:04:17.281Z"));
-
+ga('send', 'event', 'contact', 'click' , el.target.innerText || el.target.value)
 
 // GPS coordinate haversine foruma, get direct dist between 2 coordinates
 function haversine() {
@@ -437,4 +437,60 @@ three,eleven
 array filter 
 .filter(function(item, pos){
   return arr.indexOf(item)== pos; 
+});
+
+
+
+
+// Magento 2 rev tracking
+setTimeout(function(){ // window onload causes issues with magento so this is the next best approach 
+  var i = setInterval(function(){ // just in case the site in an SPA 
+      if(window.location.href.includes('payment')){ // update with final checkout step unique url string
+          var params = {
+              'price' : Number(jQuery('.price')[jQuery('.price').length-1].innerText.replace(/[^0-9.-]+/g, "")),
+              'transaction_id' : new Date()
+          }    
+console.log(params) 
+         var e =  setInterval(function(){ // this will wait until the "place order" button has loaded, checking once a second
+              try {
+                  if(document.querySelectorAll('.checkout').length > document.querySelectorAll('.checkout').length-1){
+                      clearInterval(e)
+                      console.log('- element loaded')
+                      jQuery(" .checkout").on('click',function(){
+                          console.log('- conversion fired', params)
+                          window.uetq = window.uetq || []; 
+                          window.uetq.push({ 'ec':'Checkout', 'ea':'Purchase', 'el':'Purchase', 'gv': params.price });
+                      })
+                  }
+              }
+              catch (e){} // silence is golden
+          }, 1000);
+              clearInterval(i)
+      }
+   }, 1000)
+}, 1000);
+
+
+
+
+
+function ready(callbackFunc) {
+  if (document.readyState !== 'loading') {
+    // Document is already ready, call the callback directly
+    callbackFunc();
+  } else if (document.addEventListener) {
+    // All modern browsers to register DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', callbackFunc);
+  } else {
+    // Old IE browsers
+    document.attachEvent('onreadystatechange', function() {
+      if (document.readyState === 'complete') {
+        callbackFunc();
+      }
+    });
+  }
+}
+
+ready(function() {
+  // your code here
 });
