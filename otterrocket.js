@@ -1,6 +1,6 @@
 MAPS HOOVER
 
-
+https://business.facebook.com/settings/pixels/931071210612236
 
 var listingArr = []
 var key = 'greenbridge' 
@@ -50,8 +50,10 @@ ga('gtm2.send', 'event', 'form', 'submit', window.location.pathname)
 localStorage.getItem('123')
 localStorage.setItem('123', data)
 
-
-
+// shopify form tracking
+jQuery('[type=submit] , .form__submit  ').one('click',function(el){
+  ga('send', 'event', 'contact', el.target.innerText, window.location.pathname)
+  })
 
 
 
