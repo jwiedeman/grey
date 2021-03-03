@@ -30,6 +30,7 @@ function addUnique(data) {
     localStorage.setItem(key, JSON.stringify(listingArr))
   }
 }
+
 setInterval(function(){
 document.querySelectorAll('.section-result-text-content').forEach(function(listing){
 var _el = {}
@@ -262,9 +263,7 @@ $("div.download").one('click', function () {
 })
 
 
-window.onload = function () {
 
-};
 
 window.onload = function () {
 jQuery("button:contains('SUBSCRIBE NOW')").one('click',function(){
@@ -284,7 +283,7 @@ https: //regex101.com/r/rV3oP8/1
 \b( ? : https ? : \/\/)?[^\/:]+\/.*?return_to
 
 
-    document.querySelectorAll("a.fp-featured").forEach(function (item) {
+document.querySelectorAll("a.fp-featured").forEach(function (item) {
   item.addEventListener('click', function () {
     ga('send', 'event', 'click', 'product', this.href)
   })
@@ -389,6 +388,8 @@ var _gaq = [
   s.parentNode.insertBefore(g, s)
 }(document, "script")); 
 
+// shopify atc selector
+document.querySelector('button[class*=add-to-cart]')
 
 
 
@@ -396,20 +397,6 @@ var _gaq = [
 
 
 
-
-
-sftp / ftp / ssl / tc:ip / DNS / DHCP 
-Disaster recovery and post exploration triage
-Recovering and reviewing logs & Compromise detection
-Wordpress hardening
-4 years of small business network administration 
-1 year Linux administration
-2 years small business Windows administration
-
-Cybrary Intro to infosec
-Cybrary IT fundamentals
-Cybrary sec+ 
-cybrary fundamentals of vulnerability management 
 
 
 
@@ -496,3 +483,45 @@ function ready(callbackFunc) {
 ready(function() {
   // your code here
 });
+
+
+
+
+// Trueleaf scraper
+var product_list = []
+
+var products = jQuery(".snize-product")
+var product_list_length = jQuery(".snize-product").length
+var pagination_current = parseInt(jQuery(".snize-pagination .active")[0].rev)
+var pagination_max = parseInt(jQuery(".snize-pagination > ul > li")[jQuery(".snize-pagination > ul > li").length-2].innerText)
+
+
+jQuery(".snize-product").each(function( index , el) {
+  var prod = {
+  'id' : jQuery('.snize-product')[index].id,
+  'link' : jQuery('.snize-view-link')[index].href ,
+  'name' : jQuery('.snize-title')[index].innerText,
+}
+product_list.push(prod)
+
+console.log(index,product_list_length)
+
+if(index == product_list_length -1){
+console.log('end of list on page' , pagination_current , product_list)
+jQuery(".snize-pagination > ul > li > a")[pagination_current+1].trigger( "click" );
+}
+
+});
+
+
+// trueleaf set variant 1 pound
+jQuery("div[class^='swatch-label']:contains('1 lb')")[0].click()
+
+
+// Really easy query string modification
+var params = new URLSearchParams(location.search);
+params.set('page', 1);
+
+params.toString(); // => test=123&cheese=yummy
+window.history.replaceState({}, '', `${location.pathname}?${params.toString()}`);
+document.location = window.location.href
