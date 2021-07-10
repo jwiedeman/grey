@@ -1,45 +1,3 @@
-MAPS HOOVER
-
-https://business.facebook.com/settings/pixels/931071210612236
-
-var listingArr = []
-var key = 'greenbridge' 
-var local = localStorage.getItem(key); 
-if(local==null){ //create cookie if it dosnt exist
-console.log('new storage created')
- localStorage.setItem(key, '[]')
- }
- // get anything in the cookie befroe we start, and set that as our listing arr so we dont overrite it
-var setArr = JSON.parse(localStorage.getItem(key))
-setArr.forEach(function(item){
-listingArr.push(item)
-})
-// localStorage.setItem(key, true)
-function addUnique(data) {
-  var index = -1;
-  for( var i = 0; i < listingArr.length; i++) {
-    if(listingArr[i].name === data.name) {
-      index = i;
-    }
-  }
-  if(index > -1) {
-    listingArr[index] = data;
-  } else {
-    console.log('%c #:' + listingArr.length + ' Listing Added  ->'+  data.name + ' - ' + data.location + ' - ' + data.starts ,  'color: white;')
-    listingArr.push(data)
-    localStorage.setItem(key, JSON.stringify(listingArr))
-  }
-}
-
-setInterval(function(){
-document.querySelectorAll('.section-result-text-content').forEach(function(listing){
-var _el = {}
-listing.getElementsByClassName("section-result-title")[0].innerText!= undefined ? _el.name = listing.getElementsByClassName("section-result-title")[0].innerText : console.log('-notitle')  
-listing.getElementsByClassName('section-result-location')[0].innerText != undefined ? _el.location= listing.getElementsByClassName('section-result-location')[0].innerText : console.log('-nolocation')  
-listing.getElementsByClassName('cards-rating-score')[0].innerText != undefined ? _el.stars = listing.getElementsByClassName('cards-rating-score')[0].innerText : console.log('-nostars')   
-addUnique(_el)
-})
-}, 100);
 
 
 
@@ -54,7 +12,7 @@ localStorage.setItem('123', data)
 // shopify form tracking
 jQuery('[type=submit] , .form__submit  ').one('click',function(el){
   ga('send', 'event', 'contact', el.target.innerText, window.location.pathname)
-  })
+})
 
 
 
@@ -91,7 +49,7 @@ Let me know if you have any questions.
 
  var numberOfLineBreaks = (enteredText.match(/\n/g)||[]).length;
 
-ga.getAll()[0].get('name');
+ga.getAll()[0].get('name')
 
 // get dob from Date
 function getAge(DOB) {
@@ -230,7 +188,7 @@ setTimeout(function () {
 
 
 // Event tracking
-ga('send', 'event', 'contact', 'submit', 'form');
+ga(ga.getAll()[0].get('name') + '.send', 'event', 'contact', 'submit', 'form');
 ga('send', 'event', 'email', 'click', 'link');
 
 _gaq.push(['_trackEvent', 'contact', 'form', 'submitted']);
@@ -266,12 +224,7 @@ $("div.download").one('click', function () {
 
 
 window.onload = function () {
-jQuery("button:contains('SUBSCRIBE NOW')").one('click',function(){
-ga('send', 'event', 'newsletter', 'submit', 'form')
-})
-jQuery("button:contains('Subscribe Now')").one('click',function(){
-ga('send', 'event', 'newsletter', 'submit', 'form')
-})
+
 };
 
 setTimeout(function () {
@@ -525,3 +478,15 @@ params.set('page', 1);
 params.toString(); // => test=123&cheese=yummy
 window.history.replaceState({}, '', `${location.pathname}?${params.toString()}`);
 document.location = window.location.href
+
+
+
+
+// Notes
+This is a common shopify issue where the addtocart event either underfires, dosnt fire, or overfires. 
+The client will need to contact shopify support to get assistance in diagnosing the cause of this, and a shopify theme dev to fix the issue once identified. 
+
+// notes 
+using the facebook pixel helper chrome extension, im seeing pageview, VC and atc events firing without issues. 
+
+Let me know if you see any issues with the purchase event or if you have any questions! 
